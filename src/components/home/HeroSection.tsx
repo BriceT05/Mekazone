@@ -1,23 +1,58 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { preload } from "react-dom";
+import { getImageProps } from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { heroContent } from "@/data/home";
 
+// Art direction: the hero photo is a different crop per viewport (12:5 desktop, 4:5 mobile).
+// The browser picks exactly one <source> through CSS media queries: no JS, no hydration needed.
+const heroSizes = "(max-width: 767px) 100vw, 50vw";
+
 export function HeroSection() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+  const common = {
+    alt: heroContent.imageAlt,
+    sizes: heroSizes,
+    fill: true,
+    loading: "eager" as const,
+    fetchPriority: "high" as const,
+    className: "object-cover",
+  };
 
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-    const update = () => setIsMobile(mq.matches);
-    update();
-    mq.addEventListener("change", update);
-    return () => mq.removeEventListener("change", update);
-  }, []);
+  const {
+    props: { srcSet: desktopSrcSet, src: desktopSrc },
+  } = getImageProps({
+    ...common,
+    src: "/images/hero/hero-desktop.jpg",
+  });
 
-  const mobile = isMobile === true;
+  const {
+    props: {
+      srcSet: mobileSrcSet,
+      src: mobileSrc,
+      sizes,
+      ...imgProps
+    },
+  } = getImageProps({
+    ...common,
+    src: "/images/hero/hero-mobile.jpg",
+  });
+
+  // Two media-scoped preloads: the browser keeps the one matching its viewport,
+  // so only one photo variant is ever fetched, and it starts before hydration.
+  preload(mobileSrc, {
+    as: "image",
+    imageSrcSet: mobileSrcSet,
+    imageSizes: sizes,
+    media: "(max-width: 767px)",
+    fetchPriority: "high",
+  });
+  preload(desktopSrc, {
+    as: "image",
+    imageSrcSet: desktopSrcSet,
+    imageSizes: sizes,
+    media: "(min-width: 768px)",
+    fetchPriority: "high",
+  });
 
   return (
     <section className="relative overflow-hidden bg-noir text-white">
@@ -41,19 +76,11 @@ export function HeroSection() {
         </div>
 
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-gris-fonce/40 md:aspect-[12/5]">
-          {isMobile === null ? (
-            <div className="absolute inset-0 bg-gris-fonce/40" aria-hidden />
-          ) : (
-            <Image
-              src={mobile ? "/images/hero/hero-mobile.webp" : "/images/hero/hero-desktop.webp"}
-              alt={heroContent.imageAlt}
-              fill
-              sizes="(max-width: 767px) 100vw, 50vw"
-              preload
-              fetchPriority="high"
-              className="object-cover"
-            />
-          )}
+          <picture>
+            <source media="(min-width: 768px)" srcSet={desktopSrcSet} sizes={sizes} />
+            <source media="(max-width: 767px)" srcSet={mobileSrcSet} sizes={sizes} />
+            <img {...imgProps} src={mobileSrc} alt={heroContent.imageAlt} sizes={sizes} fetchPriority="high" />
+          </picture>
         </div>
       </Container>
     </section>
