@@ -1,6 +1,6 @@
 # MEKAZONE — Inventaire général des ressources visuelles
 
-**Date :** 24 novembre 2026
+**Date d'édition :** 25 novembre 2026
 **Périmètre :** lots Hero, B2, B3, B4, B5, B6, assets internes.
 **Source détaillée :** `C:\Users\Fabrice\AppData\Local\Temp\mekazone-assets-review\B7\b7-inventaire-global.md` (681 images, lecture seule).
 
@@ -73,7 +73,7 @@ Note : périmètre validé = quatre photos principales, une par produit. Les vue
 | cat-telephonie | `public/images/categories/telephonie-800x600.jpg`, `telephonie-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — Matt Wojtaś — 5633×3912 | intégré — capture de licence manquante |
 | cat-accessoires | `public/images/categories/accessoires-800x600.jpg`, `accessoires-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — Raindrops Photography — 3900×2550 | intégré — capture de licence manquante |
 
-Distinct des six en-têtes de catégories B4. Intégrées dans `public/` le 2026-11-25. Note : les chemins réels utilisent les slugs `machines` et `accessoires` (et non `machines-equipements` / `accessoires-composants`). Captures de licence : non produites (répertoire `assets-src/licences/` absent) ; aucune capture n'est revendiquée.
+Distinct des six en-têtes de catégories B4. **Date d'intégration :** 2026-11-25 (copie dans `public/`). **Vérification de la source :** non datée — le 25 novembre 2026 n'est pas une date de vérification Unsplash. Note : les chemins réels utilisent les slugs `machines` et `accessoires` (et non `machines-equipements` / `accessoires-composants`). Captures de licence : non produites (répertoire `assets-src/licences/` absent) ; aucune capture n'est revendiquée.
 
 ## 7. B6
 

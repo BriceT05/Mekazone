@@ -15,10 +15,13 @@ type CategoryCardProps = {
 export function CategoryCard({ category }: CategoryCardProps) {
   const { slug, label, icon } = category;
   const href = `/categories/${slug}`;
+  // Tant que les liens sont neutralisés, aucune micro-interaction de survol ne doit
+  // suggérer une carte cliquable. Le focus clavier, lui, reste visible.
+  const hoverEffects = CATEGORY_LINKS_ENABLED;
 
   const cardClassName = cn(
     "group relative flex flex-col overflow-hidden rounded-lg border border-gris-fonce/10 bg-white shadow-card",
-    "transition-shadow duration-300 hover:shadow-elevated",
+    hoverEffects && "transition-shadow duration-300 hover:shadow-elevated",
     "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux",
   );
 
@@ -30,13 +33,20 @@ export function CategoryCard({ category }: CategoryCardProps) {
           alt=""
           fill
           sizes="(max-width: 639px) 45vw, (max-width: 1023px) 30vw, 200px"
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none"
+          className={cn(
+            "object-cover",
+            hoverEffects &&
+              "transition-transform duration-300 ease-out group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none",
+          )}
         />
       </div>
       <div className="flex flex-1 flex-col items-center gap-3 p-4 text-center">
         {icon ? (
           <span
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-gris-clair transition-colors duration-300 group-hover:bg-bordeaux/10"
+            className={cn(
+              "flex h-11 w-11 items-center justify-center rounded-full bg-gris-clair",
+              hoverEffects && "transition-colors duration-300 group-hover:bg-bordeaux/10",
+            )}
             aria-hidden="true"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -47,15 +57,17 @@ export function CategoryCard({ category }: CategoryCardProps) {
           {label}
         </h3>
       </div>
-      {/* Ligne d'accent au survol (micro-interaction premium) */}
-      <span
-        aria-hidden="true"
-        className={cn(
-          "absolute bottom-0 left-0 h-0.5 w-full origin-center scale-x-0 bg-bordeaux",
-          "transition-transform duration-300 ease-out group-hover:scale-x-100",
-          "motion-reduce:transition-none motion-reduce:transform-none",
-        )}
-      />
+      {/* Ligne d'accent au survol (micro-interaction premium) — uniquement carte cliquable */}
+      {hoverEffects ? (
+        <span
+          aria-hidden="true"
+          className={cn(
+            "absolute bottom-0 left-0 h-0.5 w-full origin-center scale-x-0 bg-bordeaux",
+            "transition-transform duration-300 ease-out group-hover:scale-x-100",
+            "motion-reduce:transition-none motion-reduce:transform-none",
+          )}
+        />
+      ) : null}
     </>
   );
 
