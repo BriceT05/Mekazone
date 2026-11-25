@@ -21,6 +21,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
 
   const cardClassName = cn(
     "group relative flex flex-col overflow-hidden rounded-lg border border-gris-fonce/10 bg-white shadow-card",
+    "scroll-mt-36",
     hoverEffects && "transition-shadow duration-300 hover:shadow-elevated",
     "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux",
   );
@@ -75,6 +76,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
     return (
       <Link
         href={href}
+        id={`category-${slug}`}
         prefetch={false}
         aria-label={`Voir la catégorie ${label}`}
         className={cardClassName}
@@ -88,6 +90,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
   // annoncé « lien, indisponible », sans navigation.
   return (
     <div
+      id={`category-${slug}`}
       role="link"
       tabIndex={0}
       aria-label={`Catégorie ${label} — page à venir`}

@@ -9,12 +9,12 @@ import { SearchInput } from "@/components/ui/SearchInput";
 import { Badge } from "@/components/ui/Badge";
 
 const navItems = [
-  { label: "Automobile", href: "/categories/automobile" },
-  { label: "Moto", href: "/categories/moto" },
-  { label: "Machines", href: "/categories/machines" },
-  { label: "Informatique", href: "/categories/informatique" },
-  { label: "Téléphonie", href: "/categories/telephonie" },
-  { label: "Accessoires", href: "/categories/accessoires" },
+  { label: "Automobile", href: "/#category-automobile" },
+  { label: "Moto", href: "/#category-moto" },
+  { label: "Machines", href: "/#category-machines" },
+  { label: "Informatique", href: "/#category-informatique" },
+  { label: "Téléphonie", href: "/#category-telephonie" },
+  { label: "Accessoires", href: "/#category-accessoires" },
 ];
 
 export function SiteHeader() {
@@ -73,6 +73,46 @@ export function SiteHeader() {
       previousFocusRef.current?.focus();
     };
   }, [open]);
+
+  // Fait défiler la page vers la carte de catégorie ciblée par une ancre
+  // (/#category-*) — y compris depuis une autre route ou au chargement initial.
+  useEffect(() => {
+    const scrollToAnchor = (hash?: string) => {
+      const id = (hash ?? window.location.hash).replace(/^#/, "");
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      const header = document.querySelector("header");
+      const offset = header ? header.getBoundingClientRect().height : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset - 8;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    };
+    // Laisser le temps au DOM (et aux images) de se stabiliser.
+    const timer = window.setTimeout(() => scrollToAnchor(), 150);
+    const onHashChange = () => scrollToAnchor();
+    window.addEventListener("hashchange", onHashChange);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setOpen(false);
+    const hash = href.split("#")[1];
+    if (!hash || window.location.pathname !== "/") return;
+    // Différé pour laisser le tiroir mobile se fermer (body overflow restauré)
+    // avant de défiler.
+    window.setTimeout(() => {
+      const target = document.getElementById(hash);
+      if (!target) return;
+      const header = document.querySelector("header");
+      const offset = header ? header.getBoundingClientRect().height : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset - 8;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      window.history.replaceState(null, "", href);
+    }, 60);
+  };
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-gris-fonce/10 bg-white/95 backdrop-blur">
@@ -149,6 +189,7 @@ export function SiteHeader() {
               key={item.href}
               href={item.href}
               className="transition-colors hover:text-bordeaux"
+              onClick={() => handleNavClick(item.href)}
             >
               {item.label}
             </Link>
@@ -180,7 +221,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   className="rounded-md px-3 py-2 text-sm font-medium text-noir hover:bg-gris-clair"
-                  onClick={() => setOpen(false)}
+                  onClick={() => handleNavClick(item.href)}
                 >
                   {item.label}
                 </Link>
