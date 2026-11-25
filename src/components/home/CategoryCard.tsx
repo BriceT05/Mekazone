@@ -3,24 +3,27 @@ import Link from "next/link";
 import type { Category } from "@/types/category";
 import { cn } from "@/lib/cn";
 
+// Les pages de destination `/categories/[slug]` ne sont pas encore implémentées
+// (hors périmètre D2.3). Pour éviter des 404, les cartes restent non cliquables.
+// Réactivation : passer à `true` et restaurer le rendu <Link> ci-dessous.
+const CATEGORY_LINKS_ENABLED = false;
+
 type CategoryCardProps = {
   category: Category;
 };
 
 export function CategoryCard({ category }: CategoryCardProps) {
   const { slug, label, icon } = category;
+  const href = `/categories/${slug}`;
 
-  return (
-    <Link
-      href={`/categories/${slug}`}
-      prefetch={false}
-      aria-label={`Voir la catégorie ${label}`}
-      className={cn(
-        "group relative flex flex-col overflow-hidden rounded-lg border border-gris-fonce/10 bg-white shadow-card",
-        "transition-shadow duration-300 hover:shadow-elevated",
-        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux",
-      )}
-    >
+  const cardClassName = cn(
+    "group relative flex flex-col overflow-hidden rounded-lg border border-gris-fonce/10 bg-white shadow-card",
+    "transition-shadow duration-300 hover:shadow-elevated",
+    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bordeaux",
+  );
+
+  const inner = (
+    <>
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-gris-clair">
         <Image
           src={`/images/categories/${slug}-800x600.jpg`}
@@ -53,6 +56,33 @@ export function CategoryCard({ category }: CategoryCardProps) {
           "motion-reduce:transition-none motion-reduce:transform-none",
         )}
       />
-    </Link>
+    </>
+  );
+
+  if (CATEGORY_LINKS_ENABLED) {
+    return (
+      <Link
+        href={href}
+        prefetch={false}
+        aria-label={`Voir la catégorie ${label}`}
+        className={cardClassName}
+      >
+        {inner}
+      </Link>
+    );
+  }
+
+  // Lien indisponible : motif ARIA APG — focusable pour les utilisateurs clavier,
+  // annoncé « lien, indisponible », sans navigation.
+  return (
+    <div
+      role="link"
+      tabIndex={0}
+      aria-label={`Catégorie ${label} — page à venir`}
+      aria-disabled="true"
+      className={cardClassName}
+    >
+      {inner}
+    </div>
   );
 }

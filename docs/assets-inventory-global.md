@@ -62,18 +62,18 @@
 
 Note : périmètre validé = quatre photos principales, une par produit. Les vues secondaires sont facultatives.
 
-## 6bis. Catégories (photographies proposées, non produites)
+## 6bis. Catégories (photographies intégrées)
 
-| ID | Chemin prévu | Type | Format | Dimensions natives | Origine | Statut |
+| ID | Chemin réel | Type | Format | Dimensions | Origine | Statut |
 |---|---|---|---|---|---|---|
-| cat-automobile | `public/images/categories/automobile` | produit | JPEG | 800×600 et 240×240 | Unsplash — Joshua Aragon — 6000×3376 | produit — validé techniquement — non intégré |
-| cat-moto | `public/images/categories/moto` | produit | JPEG | 800×600 et 240×240 | Unsplash — LouisMoto — 6000×3376 | produit — validé techniquement — non intégré |
-| cat-machines | `public/images/categories/machines-equipements` | produit | JPEG | 800×600 et 240×240 | Unsplash — nik biziuk — 6000×4000 | produit — validé techniquement — non intégré |
-| cat-informatique | `public/images/categories/informatique` | produit | JPEG | 800×600 et 240×240 | Unsplash — Brian Kostiuk — 6028×4012 | produit — validé techniquement — non intégré |
-| cat-telephonie | `public/images/categories/telephonie` | produit | JPEG | 800×600 et 240×240 | Unsplash — Matt Wojtaś — 5633×3912 | produit — validé techniquement — non intégré |
-| cat-accessoires | `public/images/categories/accessoires-composants` | produit | JPEG | 800×600 et 240×240 | Unsplash — Raindrops Photography — 3900×2550 | produit — validé techniquement — non intégré |
+| cat-automobile | `public/images/categories/automobile-800x600.jpg`, `automobile-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — Joshua Aragon — 6000×3376 | intégré — capture de licence manquante |
+| cat-moto | `public/images/categories/moto-800x600.jpg`, `moto-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — LouisMoto — 6000×3376 | intégré — capture de licence manquante |
+| cat-machines | `public/images/categories/machines-800x600.jpg`, `machines-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — nik biziuk — 6000×4000 | intégré — capture de licence manquante |
+| cat-informatique | `public/images/categories/informatique-800x600.jpg`, `informatique-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — Brian Kostiuk — 6028×4012 | intégré — capture de licence manquante |
+| cat-telephonie | `public/images/categories/telephonie-800x600.jpg`, `telephonie-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — Matt Wojtaś — 5633×3912 | intégré — capture de licence manquante |
+| cat-accessoires | `public/images/categories/accessoires-800x600.jpg`, `accessoires-240x240.jpg` | produit | JPEG progressif | 800×600 et 240×240 | Unsplash — Raindrops Photography — 3900×2550 | intégré — capture de licence manquante |
 
-Distinct des six en-têtes de catégories B4.
+Distinct des six en-têtes de catégories B4. Intégrées dans `public/` le 2026-11-25. Note : les chemins réels utilisent les slugs `machines` et `accessoires` (et non `machines-equipements` / `accessoires-composants`). Captures de licence : non produites (répertoire `assets-src/licences/` absent) ; aucune capture n'est revendiquée.
 
 ## 7. B6
 

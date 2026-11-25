@@ -68,12 +68,12 @@
 
 | ID | Fichier final | Emplacement | Source | URL | Auteur | Licence | Date | Vérifs | Capture | Statut |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `cat-automobile` | `images/categories/automobile` | Catégorie | — | — | — | — | — | — | — | à rechercher |
-| `cat-moto` | `images/categories/moto` | Catégorie | — | — | — | — | — | — | — | à rechercher |
-| `cat-machines` | `images/categories/machines-equipements` | Catégorie | — | — | — | — | — | — | — | à rechercher |
-| `cat-informatique` | `images/categories/informatique` | Catégorie | — | — | — | — | — | — | — | à rechercher |
-| `cat-telephonie` | `images/categories/telephonie` | Catégorie | — | — | — | — | — | — | — | à rechercher |
-| `cat-accessoires` | `images/categories/accessoires-composants` | Catégorie | — | — | — | — | — | — | — | à rechercher |
+| `cat-automobile` | `images/categories/automobile-800x600.jpg`, `automobile-240x240.jpg` | Catégorie | Unsplash | https://unsplash.com/fr/photos/compartiment-moteur-noir-et-rouge-SlgLD4_drDA | Joshua Aragon | Unsplash | 2026-11-25 | logo:non · visage:non · filigrane:non · texte:non | à produire dans `assets-src/licences/cat-automobile.png` (inexistante à ce jour) | intégré — capture de licence manquante |
+| `cat-moto` | `images/categories/moto-800x600.jpg`, `moto-240x240.jpg` | Catégorie | Unsplash | https://unsplash.com/fr/photos/gros-plan-dune-montre-9ehmPYBJkyU | LouisMoto | Unsplash | 2026-11-25 | logo:non · visage:non · filigrane:non · texte:non | à produire dans `assets-src/licences/cat-moto.png` (inexistante à ce jour) | intégré — capture de licence manquante |
+| `cat-machines` | `images/categories/machines-800x600.jpg`, `machines-240x240.jpg` | Catégorie | Unsplash | https://unsplash.com/fr/photos/outil-a-main-en-acier-inoxydable-et-bleu-hJ4JxDJkRUw | nik biziuk | Unsplash | 2026-11-25 | logo:non · visage:non · filigrane:non · texte:non | à produire dans `assets-src/licences/cat-machines.png` (inexistante à ce jour) | intégré — capture de licence manquante |
+| `cat-informatique` | `images/categories/informatique-800x600.jpg`, `informatique-240x240.jpg` | Catégorie | Unsplash | https://unsplash.com/fr/photos/processeur-informatique-maintenu-par-une-pince-a-epiler-S4jSvcHYcOs | Brian Kostiuk | Unsplash | 2026-11-25 | logo:non · visage:non · filigrane:non · texte:non | à produire dans `assets-src/licences/cat-informatique.png` (inexistante à ce jour) | intégré — capture de licence manquante |
+| `cat-telephonie` | `images/categories/telephonie-800x600.jpg`, `telephonie-240x240.jpg` | Catégorie | Unsplash | https://unsplash.com/fr/photos/smartphone-noir--baMCm2CLKM | Matt Wojtaś | Unsplash | 2026-11-25 | logo:non · visage:non · filigrane:non · texte:non | à produire dans `assets-src/licences/cat-telephonie.png` (inexistante à ce jour) | intégré — capture de licence manquante |
+| `cat-accessoires` | `images/categories/accessoires-800x600.jpg`, `accessoires-240x240.jpg` | Catégorie | Unsplash | https://unsplash.com/fr/photos/un-couple-de-vis-pose-sur-une-table-wYKgV2SZMc8 | Raindrops Photography | Unsplash | 2026-11-25 | logo:non · visage:non · filigrane:non · texte:non | à produire dans `assets-src/licences/cat-accessoires.png` (inexistante à ce jour) | intégré — capture de licence manquante |
 
 ### 3.4 Produits de démonstration
 
@@ -200,15 +200,15 @@ Note : les vues secondaires sont facultatives et ne sont mentionnées que si ell
 - Dates de vérification non renseignées pour les produits B et D.
 - Captures de licence à produire dans `assets-src/licences/` pour les ressources non encore intégrées.
 
-### 6.8 Catégories (photographies proposées, non téléchargées)
+### 6.8 Catégories (photographies intégrées)
 
 | Catégorie | Auteur | ID Unsplash | URL | Dimensions natives | Licence | Statut |
 |---|---|---|---|---|---|---|
-| Automobile | Joshua Aragon | photo-1622062929134-a8fa99b46f56 | https://unsplash.com/fr/photos/compartiment-moteur-noir-et-rouge-SlgLD4_drDA | 6000×3376 | Unsplash | produit — validé techniquement — non intégré |
-| Moto | LouisMoto | photo-1657873961503-89a65459de2b | https://unsplash.com/fr/photos/gros-plan-dune-montre-9ehmPYBJkyU | 6000×3376 | Unsplash | produit — validé techniquement — non intégré |
-| Machines et équipements | nik biziuk | photo-1602664876866-d3b33b77756b | https://unsplash.com/fr/photos/outil-a-main-en-acier-inoxydable-et-bleu-hJ4JxDJkRUw | 6000×4000 | Unsplash | produit — validé techniquement — non intégré |
-| Informatique | Brian Kostiuk | photo-1494083306499-e22e4a457632 | https://unsplash.com/fr/photos/processeur-informatique-maintenu-par-une-pince-a-epiler-S4jSvcHYcOs | 6028×4012 | Unsplash | produit — validé techniquement — non intégré |
-| Téléphonie | Matt Wojtaś | photo-1557774058-c9148bc6e481 | https://unsplash.com/fr/photos/smartphone-noir--baMCm2CLKM | 5633×3912 | Unsplash | produit — validé techniquement — non intégré |
-| Accessoires et composants | Raindrops Photography | photo-1704732061018-3ac738176c20 | https://unsplash.com/fr/photos/un-couple-de-vis-pose-sur-une-table-wYKgV2SZMc8 | 3900×2550 | Unsplash | produit — validé techniquement — non intégré |
+| Automobile | Joshua Aragon | photo-1622062929134-a8fa99b46f56 | https://unsplash.com/fr/photos/compartiment-moteur-noir-et-rouge-SlgLD4_drDA | 6000×3376 | Unsplash | intégré — 800×600 + 240×240 JPEG progressifs — capture de licence manquante |
+| Moto | LouisMoto | photo-1657873961503-89a65459de2b | https://unsplash.com/fr/photos/gros-plan-dune-montre-9ehmPYBJkyU | 6000×3376 | Unsplash | intégré — 800×600 + 240×240 JPEG progressifs — capture de licence manquante |
+| Machines et équipements | nik biziuk | photo-1602664876866-d3b33b77756b | https://unsplash.com/fr/photos/outil-a-main-en-acier-inoxydable-et-bleu-hJ4JxDJkRUw | 6000×4000 | Unsplash | intégré — 800×600 + 240×240 JPEG progressifs — capture de licence manquante |
+| Informatique | Brian Kostiuk | photo-1494083306499-e22e4a457632 | https://unsplash.com/fr/photos/processeur-informatique-maintenu-par-une-pince-a-epiler-S4jSvcHYcOs | 6028×4012 | Unsplash | intégré — 800×600 + 240×240 JPEG progressifs — capture de licence manquante |
+| Téléphonie | Matt Wojtaś | photo-1557774058-c9148bc6e481 | https://unsplash.com/fr/photos/smartphone-noir--baMCm2CLKM | 5633×3912 | Unsplash | intégré — 800×600 + 240×240 JPEG progressifs — capture de licence manquante |
+| Accessoires et composants | Raindrops Photography | photo-1704732061018-3ac738176c20 | https://unsplash.com/fr/photos/un-couple-de-vis-pose-sur-une-table-wYKgV2SZMc8 | 3900×2550 | Unsplash | intégré — 800×600 + 240×240 JPEG progressifs — capture de licence manquante |
 
-Note : ces six photographies sont distinctes des six en-têtes de catégories B4. Elles ont été produites : six sources, six exports 800×600 et six exports 240×240. Validées techniquement : oui, selon le rapport du lot. Intégrées dans `public/` : non. À intégrer ultérieurement : oui, sous réserve de l'autorisation correspondante.
+Note : ces six photographies sont distinctes des six en-têtes de catégories B4. Elles ont été intégrées dans `public/images/categories/` le 2026-11-25 : six exports 800×600 et six exports 240×240 (JPEG progressifs), ratio 4:3 pour les 800×600. Validées techniquement : oui. Captures de licence : non produites — le répertoire `assets-src/licences/` n'existe pas à ce jour ; aucune capture n'est revendiquée. Réserves maintenues : vérification juridique manuelle image par image (logo/marque/visage/filigrane/texte) non documentée par capture ; dates de vérification source non renseignées dans les documents consultés.
