@@ -17,23 +17,21 @@ export function ProductCard({ product, className }: ProductCardProps) {
   return (
     <Card
       className={cn(
-        "group relative flex flex-col overflow-hidden border-t-2 border-t-bordeaux/60 transition-all duration-300 hover:shadow-elevated",
+        "group flex h-full flex-col overflow-hidden rounded-lg border border-gris-fonce/10 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated motion-reduce:transform-none motion-reduce:transition-none",
         className,
       )}
     >
-      {/* Image area — premium treatment */}
-      <div className="relative aspect-square w-full overflow-hidden bg-white shadow-[inset_0_2px_8px_rgba(0,0,0,0.02)]">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gris-clair/10" />
-
+      {/* Image area — square, centered, consistent framing */}
+      <div className="relative aspect-square w-full overflow-hidden bg-white">
         <Image
           src={product.image}
           alt={product.imageAlt ?? product.title}
           fill
           sizes="(max-width: 639px) 45vw, (max-width: 1023px) 31vw, 302px"
-          className="object-contain p-8 transition-transform duration-500 ease-out motion-reduce:transform-none motion-reduce:transition-none group-hover:scale-105"
+          className="object-contain p-6 transition-transform duration-500 ease-out motion-reduce:transform-none group-hover:scale-105"
         />
 
-        <div className="absolute left-4 top-4 z-10 flex flex-col gap-1.5">
+        <div className="absolute left-3 top-3 z-10 flex flex-col gap-1.5">
           {isDemo ? (
             <span className="rounded-sm bg-rouge px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">
               Visuel de démonstration
@@ -47,7 +45,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
       </div>
 
       {/* Info block */}
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-5">
         <div className="mb-3 space-y-1.5">
           {!isDemo && product.rating !== undefined && (
             <Rating value={product.rating} count={product.reviewCount} className="mb-2" />
