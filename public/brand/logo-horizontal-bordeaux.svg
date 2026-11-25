@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 436 96" width="436" height="96" role="img" aria-labelledby="mkz-logo-dark-title">
+  <title id="mkz-logo-dark-title">MEKAZONE</title>
+  <g transform="translate(6 6) scale(.875)">
+    <path fill="#741E2B" d="M48 4 86.1 26v44L48 92 9.9 70V26L48 4Z"/>
+    <g fill="#FFFFFF">
+      <circle cx="48" cy="38" r="11"/>
+      <path d="M41 45h14l2.5 25Q48 78 38.5 70L41 45Z"/>
+    </g>
+  </g>
+  <g font-family="Archivo, Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="54">
+    <text x="106" y="67" textLength="158" lengthAdjust="spacingAndGlyphs" fill="#171719">MEKA</text>
+    <text x="264" y="67" textLength="166" lengthAdjust="spacingAndGlyphs" fill="#741E2B">ZONE</text>
+  </g>
+</svg>

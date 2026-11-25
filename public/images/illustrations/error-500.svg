@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-labelledby="mkz-500-title" style="color:#B5122B">
+  <title id="mkz-500-title">Erreur serveur</title>
+  <circle cx="240" cy="180" r="118" fill="#F3F3F3"/>
+  <path d="M240 96 338 258H142L240 96Z" fill="none" stroke="#34373B" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M240 154v46" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="240" cy="224" r="7" fill="currentColor"/>
+</svg>

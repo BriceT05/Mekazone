@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360" role="img" aria-labelledby="mkz-404-title" style="color:#B5122B">
+  <title id="mkz-404-title">Page introuvable</title>
+  <circle cx="240" cy="178" r="118" fill="#F3F3F3"/>
+  <g fill="none" stroke="#34373B" stroke-width="14" stroke-linecap="round">
+    <circle cx="226" cy="182" r="52" stroke-width="12"/>
+    <path d="M226 130v-16M168 182h-16M226 234v16M284 182h16M187 143l-11-11M265 221l11 11M265 143l11-11M187 221l-11 11"/>
+  </g>
+  <circle cx="226" cy="182" r="16" fill="none" stroke="#34373B" stroke-width="10"/>
+  <g stroke="currentColor" stroke-width="14" stroke-linecap="round">
+    <path d="M320 138l12 14"/>
+  </g>
+</svg>

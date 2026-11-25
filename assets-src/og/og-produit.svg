@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="mkz-og-produit-title">
+  <title id="mkz-og-produit-title">MEKAZONE — Fiche produit</title>
+  <rect width="1200" height="630" fill="#171719"/>
+  <rect x="760" y="0" width="440" height="630" fill="#FFFFFF"/>
+  <g transform="translate(80 64) scale(.42)">
+    <path fill="#FFFFFF" d="M48 4 86.1 26v44L48 92 9.9 70V26L48 4Z"/>
+    <g fill="#171719">
+      <circle cx="48" cy="38" r="11"/>
+      <path d="M41 45h14l2.5 25Q48 78 38.5 70L41 45Z"/>
+    </g>
+  </g>
+  <text x="132" y="104" font-family="Archivo, Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="30" letter-spacing="5" fill="#FFFFFF">MEKAZONE</text>
+  <text x="80" y="250" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="22" letter-spacing="4" fill="#B5122B">CATÉGORIE</text>
+  <text x="80" y="336" font-family="Archivo, Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="60" fill="#FFFFFF">Nom du produit</text>
+  <text x="80" y="398" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="26" fill="#F3F3F3" opacity=".7">Référence · Marque</text>
+  <text x="80" y="486" font-family="Archivo, Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="44" fill="#FFFFFF">Prix en FCFA</text>
+  <text x="80" y="560" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="20" fill="#F3F3F3" opacity=".5">Visuel de démonstration</text>
+  <rect x="820" y="115" width="320" height="320" rx="18" fill="#F3F3F3"/>
+  <g stroke="#34373B" stroke-width="3" opacity=".2" stroke-linecap="round">
+    <path d="M900 245h160M900 285h160M900 325h100"/>
+  </g>
+  <text x="980" y="500" text-anchor="middle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="600" font-size="20" letter-spacing="3" fill="#34373B" opacity=".6">PHOTO PRODUIT</text>
+</svg>
