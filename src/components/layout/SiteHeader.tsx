@@ -101,7 +101,7 @@ export function SiteHeader() {
             height={36}
             priority
           />
-          <span className="font-archivo text-xl font-extrabold tracking-tight text-bordeaux">
+          <span className="font-heading text-xl font-extrabold tracking-tight text-bordeaux">
             MEKAZONE
           </span>
         </Link>
@@ -167,7 +167,7 @@ export function SiteHeader() {
           />
           <div ref={drawerRef} id="mobile-drawer" className="absolute left-0 top-0 h-full w-72 bg-white shadow-elevated" role="dialog" aria-modal="true" aria-label="Menu mobile">
             <div className="flex h-16 items-center justify-between border-b border-gris-fonce/10 px-4">
-              <span className="font-archivo text-lg font-extrabold text-bordeaux">
+              <span className="font-heading text-lg font-extrabold text-bordeaux">
                 MEKAZONE
               </span>
               <IconButton ref={closeButtonRef} aria-label="Fermer" onClick={() => setOpen(false)}>

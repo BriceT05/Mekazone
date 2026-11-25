@@ -11,7 +11,7 @@ export function HeroSection() {
           <p className="text-sm font-semibold uppercase tracking-widest text-rouge">
             {heroContent.eyebrow}
           </p>
-          <h1 className="font-archivo text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
+          <h1 className="font-heading text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl">
             {heroContent.title}
           </h1>
           <p className="max-w-xl text-base text-white/80 md:text-lg">
