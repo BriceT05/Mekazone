@@ -12,12 +12,12 @@ export const heroContent = {
 };
 
 export const homeCategories: Category[] = [
-  { id: "automobile", slug: "automobile", label: "Automobile", icon: "/icons/categories/automobile.svg", count: 1240 },
-  { id: "moto", slug: "moto", label: "Moto", icon: "/icons/categories/moto.svg", count: 320 },
-  { id: "machines", slug: "machines", label: "Machines", icon: "/icons/categories/machines.svg", count: 86 },
-  { id: "informatique", slug: "informatique", label: "Informatique", icon: "/icons/categories/informatique.svg", count: 540 },
-  { id: "telephonie", slug: "telephonie", label: "Téléphonie", icon: "/icons/categories/telephonie.svg", count: 210 },
-  { id: "accessoires", slug: "accessoires", label: "Accessoires", icon: "/icons/categories/accessoires.svg", count: 890 },
+  { id: "automobile", slug: "automobile", label: "Automobile", icon: "/icons/categories/automobile.svg" },
+  { id: "moto", slug: "moto", label: "Moto", icon: "/icons/categories/moto.svg" },
+  { id: "machines", slug: "machines", label: "Machines & équipements", icon: "/icons/categories/machines.svg" },
+  { id: "informatique", slug: "informatique", label: "Informatique", icon: "/icons/categories/informatique.svg" },
+  { id: "telephonie", slug: "telephonie", label: "Téléphonie", icon: "/icons/categories/telephonie.svg" },
+  { id: "accessoires", slug: "accessoires", label: "Accessoires & composants", icon: "/icons/categories/accessoires.svg" },
 ];
 
 export const homeProducts: Product[] = [];
