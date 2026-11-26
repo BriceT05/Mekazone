@@ -59,15 +59,15 @@
 
 | ID | Fichier final | Emplacement | Source | URL | Auteur | Licence | Date | Vérifs | Capture | Statut |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `promo-sidebar-desktop` | `images/banners/promo-sidebar-desktop.{avif,webp}` | F — sidebar | Pexels | https://www.pexels.com/photo/cloth-above-the-tools-8478258/ | Sergey Meshkov | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | manquante — `assets-src/licences/` absent | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
-| `promo-sidebar-mobile` | `images/banners/promo-sidebar-mobile.{avif,webp}` | F — mobile | Pexels | https://www.pexels.com/photo/mechanical-tools-in-a-tool-box-10126655/ | Auto Records | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | manquante — `assets-src/licences/` absent | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
+| `promo-sidebar-desktop` | `images/banners/promo-sidebar-desktop.{avif,webp}` | F — sidebar | Pexels | https://www.pexels.com/photo/cloth-above-the-tools-8478258/ | Sergey Meshkov | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | produite — `assets-src/licences/promo-sidebar-desktop.png` | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
+| `promo-sidebar-mobile` | `images/banners/promo-sidebar-mobile.{avif,webp}` | F — mobile | Pexels | https://www.pexels.com/photo/mechanical-tools-in-a-tool-box-10126655/ | Auto Records | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | produite — `assets-src/licences/promo-sidebar-mobile.png` | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
 
 **B3 — Grandes bannières promotionnelles**
 
 | ID | Fichier final | Emplacement | Source | URL | Auteur | Licence | Date | Vérifs | Capture | Statut |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `promo-large-desktop` | `images/banners/promo-large-desktop.{avif,webp}` | Boutique | Pexels | https://www.pexels.com/photo/mechanic-assembling-engine-with-precision-tools-33559451 | Auto Tech | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | manquante — `assets-src/licences/` absent | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
-| `promo-large-mobile` | `images/banners/promo-large-mobile.{avif,webp}` | Boutique mobile | Pexels | https://www.pexels.com/photo/mechanic-assembling-engine-with-precision-tools-33559451 | Auto Tech | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | manquante — `assets-src/licences/` absent | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
+| `promo-large-desktop` | `images/banners/promo-large-desktop.{avif,webp}` | Boutique | Pexels | https://www.pexels.com/photo/mechanic-assembling-engine-with-precision-tools-33559451 | Auto Tech | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | produite — `assets-src/licences/promo-large.png` | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
+| `promo-large-mobile` | `images/banners/promo-large-mobile.{avif,webp}` | Boutique mobile | Pexels | https://www.pexels.com/photo/mechanic-assembling-engine-with-precision-tools-33559451 | Auto Tech | Pexels License | vérification source 2026-11-23 (intégration non effectuée) | logo:non · visage:non · filigrane:non · texte:non | produite — `assets-src/licences/promo-large.png` (source commune) | validé — exports optimisés présents dans `public/images/banners/` (non committés) |
 
 **B4 — En-têtes de catégories (non régularisés dans ce lot)**
 
@@ -76,7 +76,7 @@
 | `category-header-desktop` | `images/banners/category-header-desktop` | En-tête catégorie | — | — | — | — | — | — | — | à rechercher |
 | `category-header-mobile` | `images/banners/category-header-mobile` | En-tête catégorie mobile | — | — | — | — | — | — | — | à rechercher |
 
-> Cohérence avec §6.3 et §6.4 : mêmes sources, auteurs, URL et dates de vérification (23 nov 2026) et même liste de vérifs. Les captures de licence restent **manquantes** pour B2 et B3 (répertoire `assets-src/licences/` absent) ; aucune fausse preuve n'est revendiquée. Les masters sont conservés intacts dans `C:\Users\Fabrice\AppData\Local\Temp\mekazone-banners\` ; les anciens exports restent dans `…/B2.5/exports/` et `…/B3.4/exports/`.
+> Cohérence avec §6.3 et §6.4 : mêmes sources, auteurs, URL et dates de vérification (23 nov 2026) et même liste de vérifs. Les captures de licence pour B2 et B3 ont été produites le 26 novembre 2026 dans `assets-src/licences/` (`promo-sidebar-desktop.png`, `promo-sidebar-mobile.png`, `promo-large.png`) ; preuves authentiques de la fiche Pexels (licence « Free »). Les masters sont conservés intacts dans `C:\Users\Fabrice\AppData\Local\Temp\mekazone-banners\` ; les anciens exports restent dans `…/B2.5/exports/` et `…/B3.4/exports/`.
 
 ### 3.3 Catégories
 
@@ -168,7 +168,7 @@ Détail `hero-main-mobile` : master 2701×3376 ; exports AVIF 1080×1350 (177 06
 | `promo-sidebar-desktop` | `images/banners/promo-sidebar-desktop` | Pexels | https://www.pexels.com/photo/cloth-above-the-tools-8478258/ | Sergey Meshkov | Pexels | 2026-11-23 | logo:non · visage:non · filigrane:non · texte:non | validé |
 | `promo-sidebar-mobile` | `images/banners/promo-sidebar-mobile` | Pexels | https://www.pexels.com/photo/mechanical-tools-in-a-tool-box-10126655/ | Auto Records | Pexels | 2026-11-23 | logo:non · visage:non · filigrane:non · texte:non | validé |
 
-> Cohérence (D2.5ter) : voir §3.2 pour la version consolidée. Exports optimisés présents dans `public/images/banners/` (non committés) ; masters intacts ; anciens exports conservés ; captures manquantes.
+> Cohérence (D2.5ter) : voir §3.2 pour la version consolidée. Exports optimisés présents dans `public/images/banners/` (non committés) ; masters intacts ; anciens exports conservés ; captures produites dans `assets-src/licences/` (`promo-sidebar-desktop.png`, `promo-sidebar-mobile.png`, `promo-large.png`).
 
 ### 6.4 B3 — Grandes bannières promotionnelles
 
@@ -178,7 +178,7 @@ Détail `hero-main-mobile` : master 2701×3376 ; exports AVIF 1080×1350 (177 06
 
 Réserve documentée : contenant translucide vert-jaune en haut à gauche et numéros de fonderie sur le bloc-moteur, non retouchés.
 
-> Cohérence (D2.5ter) : voir §3.2 pour la version consolidée. Exports optimisés présents dans `public/images/banners/` (non committés) ; masters intacts ; anciens exports conservés ; captures manquantes.
+> Cohérence (D2.5ter) : voir §3.2 pour la version consolidée. Exports optimisés présents dans `public/images/banners/` (non committés) ; masters intacts ; anciens exports conservés ; captures produites dans `assets-src/licences/` (`promo-sidebar-desktop.png`, `promo-sidebar-mobile.png`, `promo-large.png`).
 
 ### 6.5 B4 — En-têtes de catégories
 
