@@ -29,17 +29,20 @@ export const promoContent = {
     ctaLabel: "Explorer l'outillage",
     imageAlt: "Coffret de douilles et de clés rangé dans un bac d'atelier",
   },
+  // Contenu descriptif uniquement : les univers et familles de produits, sans
+  // prestation, délai, zone de livraison, garantie ni engagement commercial.
   editorial: {
-    eyebrow: "Sélection MEKAZONE",
-    title: "Des références choisies pour durer",
-    body: "Pièces, outillage et équipements vérifiés par notre équipe, pour l'atelier comme pour la route.",
+    eyebrow: "Univers MEKAZONE",
+    title: "L'atelier et la route, au même endroit",
+    // Espaces insécables avant le deux-points : évite un « : » orphelin en début de ligne sur mobile.
+    body: "Pièces automobile, équipements moto, machines d'atelier, informatique et téléphonie\u00A0: les familles de produits réunies par MEKAZONE.",
     items: [
-      "Ouvert aux particuliers et aux professionnels",
-      "Conseils techniques par notre équipe",
-      "Livraison rapide partout en Côte d'Ivoire",
+      "Pièces et entretien pour l'automobile",
+      "Équipements et accessoires pour la moto",
+      "Machines d'atelier, outillage et équipements",
     ],
     ctaLabel: "Voir la sélection",
-    note: "Boutique en ligne bientôt disponible",
+    note: "Boutique en ligne en préparation",
   },
 };
 
