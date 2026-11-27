@@ -11,6 +11,38 @@ export const heroContent = {
   imageAlt: "Illustration hero MEKAZONE",
 };
 
+// Les bannières B2/B3 sont des photographies brutes : ces contenus sont rendus
+// en HTML/CSS par-dessus l'image (aucun texte incrusté dans les fichiers).
+export const promoContent = {
+  large: {
+    eyebrow: "Atelier & performance",
+    title: "L'atelier, sans compromis",
+    subtitle: "Outillage et équipements sélectionnés pour les professionnels.",
+    ctaLabel: "Découvrir la sélection",
+    imageAlt:
+      "Mécanicien assemblant un bloc-moteur avec une visseuse pneumatique",
+  },
+  sidebar: {
+    eyebrow: "Pièces & outillage",
+    title: "L'outillage de l'atelier",
+    subtitle: "Douilles, clés et accessoires pour travailler proprement.",
+    ctaLabel: "Explorer l'outillage",
+    imageAlt: "Coffret de douilles et de clés rangé dans un bac d'atelier",
+  },
+  editorial: {
+    eyebrow: "Sélection MEKAZONE",
+    title: "Des références choisies pour durer",
+    body: "Pièces, outillage et équipements vérifiés par notre équipe, pour l'atelier comme pour la route.",
+    items: [
+      "Ouvert aux particuliers et aux professionnels",
+      "Conseils techniques par notre équipe",
+      "Livraison rapide partout en Côte d'Ivoire",
+    ],
+    ctaLabel: "Voir la sélection",
+    note: "Boutique en ligne bientôt disponible",
+  },
+};
+
 export const homeCategories: Category[] = [
   { id: "automobile", slug: "automobile", label: "Automobile", icon: "/icons/categories/automobile.svg" },
   { id: "moto", slug: "moto", label: "Moto", icon: "/icons/categories/moto.svg" },
