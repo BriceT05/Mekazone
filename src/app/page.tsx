@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 import { HeroSection } from "@/components/home/HeroSection";
 import { CategoryGrid } from "@/components/home/CategoryGrid";
 import { PromoBannerSection } from "@/components/home/PromoBannerSection";
@@ -15,6 +16,7 @@ export default function Home() {
         <PromoBannerSection />
         <ProductRail title="Sélection de produits" products={homeProducts} />
       </main>
+      <SiteFooter />
     </>
   );
 }
