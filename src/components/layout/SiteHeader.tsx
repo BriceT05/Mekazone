@@ -133,17 +133,16 @@ export function SiteHeader() {
 
       {/* Main header */}
       <Container className="flex h-16 items-center gap-4">
-        <Link href="/" className="flex items-center gap-2" aria-label="MEKAZONE accueil">
+        <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/brand/logo-mark.svg"
-            alt="MEKAZONE"
-            width={36}
-            height={36}
+            src="/images/branding/mekazone-logo-transparent.png"
+            alt="MEKAZONE — Accueil"
+            width={1800}
+            height={595}
+            sizes="(min-width: 768px) 169px, 133px"
             priority
+            className="h-11 w-auto aspect-[1800/595] md:h-14"
           />
-          <span className="font-heading text-xl font-extrabold tracking-tight text-bordeaux">
-            MEKAZONE
-          </span>
         </Link>
 
         <div className="hidden flex-1 md:block">
