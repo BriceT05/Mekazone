@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { IconButton } from "@/components/ui/IconButton";
 import { SearchInput } from "@/components/ui/SearchInput";
-import { Badge } from "@/components/ui/Badge";
 import { MobileDrawer, type DrawerItem } from "./MobileDrawer";
 
 const navItems: DrawerItem[] = [
@@ -17,6 +16,9 @@ const navItems: DrawerItem[] = [
   { label: "Téléphonie", href: "/#category-telephonie" },
   { label: "Accessoires", href: "/#category-accessoires" },
 ];
+
+// Information de livraison : mention descriptive, sans délai, gratuité ni couverture.
+const deliveryNote = "Livraison au Sénégal 🇸🇳";
 
 // Respecte prefers-reduced-motion pour les défilements programmatiques.
 const scrollBehavior = (): "auto" | "smooth" =>
@@ -87,23 +89,15 @@ export function SiteHeader() {
           <SearchInput placeholder="Rechercher un produit, une pièce..." aria-label="Recherche" />
         </div>
 
-        <div className="ml-auto flex items-center gap-1 max-[359px]:gap-0">
-          <IconButton aria-label="Mon compte">
-            <Image src="/icons/ui/user.svg" alt="" width={20} height={20} />
-          </IconButton>
-          <IconButton aria-label="Favoris">
-            <Image src="/icons/ui/heart.svg" alt="" width={20} height={20} />
-          </IconButton>
-          <IconButton aria-label="Panier" className="relative">
-            <Image src="/icons/ui/cart.svg" alt="" width={20} height={20} />
-            <Badge variant="promo" className="absolute -right-1 -top-1 px-1.5 py-0 text-[10px]">
-              3
-            </Badge>
-          </IconButton>
+        {/* Mention de livraison — niveau secondaire, alignée à droite de la recherche */}
+        <p className="ml-4 hidden shrink-0 whitespace-nowrap text-xs font-medium text-gris-fonce/80 md:block">
+          {deliveryNote}
+        </p>
+
+        <div className="ml-auto flex items-center gap-1 max-[359px]:gap-0 md:hidden">
           <IconButton
             ref={menuButtonRef}
             aria-label="Menu"
-            className="md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls={open ? drawerId : undefined}
@@ -116,6 +110,7 @@ export function SiteHeader() {
       {/* Mobile search */}
       <Container className="pb-3 md:hidden">
         <SearchInput placeholder="Rechercher..." aria-label="Recherche mobile" />
+        <p className="mt-2 text-right text-xs font-medium text-gris-fonce/80">{deliveryNote}</p>
       </Container>
 
       {/* Desktop nav */}
