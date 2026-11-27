@@ -132,16 +132,16 @@ export function SiteHeader() {
       </div>
 
       {/* Main header */}
-      <Container className="flex h-16 items-center gap-4">
+      <Container className="flex h-16 items-center gap-0 md:h-[84px] md:gap-4 lg:h-[92px]">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/branding/mekazone-logo-transparent.png"
             alt="MEKAZONE — Accueil"
             width={1800}
             height={595}
-            sizes="(min-width: 768px) 169px, 133px"
+            sizes="(min-width: 1024px) 230px, (min-width: 768px) 206px, 169px"
             priority
-            className="h-11 w-auto aspect-[1800/595] md:h-14"
+            className="h-14 w-auto max-w-none shrink-0 aspect-[1800/595] max-[387px]:h-11 md:h-[68px] lg:h-[76px]"
           />
         </Link>
 

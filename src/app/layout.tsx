@@ -21,7 +21,12 @@ export const metadata: Metadata = {
   description:
     "MEKAZONE : pièces, accessoires et équipements pour l'automobile, la moto et la tech.",
   icons: {
-    icon: "/brand/favicon.ico",
+    icon: [
+      { url: "/brand/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/brand/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/brand/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/brand/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
   },
 };
 
