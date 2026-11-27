@@ -1,14 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { IconButton } from "@/components/ui/IconButton";
 import { SearchInput } from "@/components/ui/SearchInput";
 import { Badge } from "@/components/ui/Badge";
+import { MobileDrawer, type DrawerItem } from "./MobileDrawer";
 
-const navItems = [
+const navItems: DrawerItem[] = [
   { label: "Automobile", href: "/#category-automobile" },
   { label: "Moto", href: "/#category-moto" },
   { label: "Machines", href: "/#category-machines" },
@@ -17,62 +18,14 @@ const navItems = [
   { label: "Accessoires", href: "/#category-accessoires" },
 ];
 
+// Respecte prefers-reduced-motion pour les défilements programmatiques.
+const scrollBehavior = (): "auto" | "smooth" =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const drawerRef = useRef<HTMLDivElement>(null);
-  const previousFocusRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    previousFocusRef.current = document.activeElement as HTMLElement | null;
-    document.body.style.overflow = "hidden";
-    const focusTimer = window.setTimeout(() => {
-      closeButtonRef.current?.focus();
-    }, 0);
-
-    const getFocusable = () => {
-      if (!drawerRef.current) return [];
-      return Array.from(
-        drawerRef.current.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])',
-        ),
-      );
-    };
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        setOpen(false);
-        return;
-      }
-      if (e.key !== "Tab") return;
-      const focusable = getFocusable();
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      const active = document.activeElement as HTMLElement | null;
-      if (e.shiftKey) {
-        if (active === first || !drawerRef.current?.contains(active)) {
-          e.preventDefault();
-          last.focus();
-        }
-      } else {
-        if (active === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      window.clearTimeout(focusTimer);
-      window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-      previousFocusRef.current?.focus();
-    };
-  }, [open]);
+  const drawerId = useId();
 
   // Fait défiler la page vers la carte de catégorie ciblée par une ancre
   // (/#category-*) — y compris depuis une autre route ou au chargement initial.
@@ -85,7 +38,7 @@ export function SiteHeader() {
       const header = document.querySelector("header");
       const offset = header ? header.getBoundingClientRect().height : 0;
       const top = target.getBoundingClientRect().top + window.scrollY - offset - 8;
-      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      window.scrollTo({ top: Math.max(0, top), behavior: scrollBehavior() });
     };
     // Laisser le temps au DOM (et aux images) de se stabiliser.
     const timer = window.setTimeout(() => scrollToAnchor(), 150);
@@ -109,30 +62,15 @@ export function SiteHeader() {
       const header = document.querySelector("header");
       const offset = header ? header.getBoundingClientRect().height : 0;
       const top = target.getBoundingClientRect().top + window.scrollY - offset - 8;
-      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      window.scrollTo({ top: Math.max(0, top), behavior: scrollBehavior() });
       window.history.replaceState(null, "", href);
     }, 60);
   };
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-gris-fonce/10 bg-white/95 backdrop-blur">
-      {/* Top bar */}
-      <div className="hidden border-b border-gris-fonce/10 bg-gris-clair md:block">
-        <Container className="flex h-9 items-center justify-between text-xs text-gris-fonce">
-          <span>Livraison rapide partout en Côte d&apos;Ivoire</span>
-          <div className="flex items-center gap-4">
-            <Link href="/support" className="hover:text-bordeaux">
-              Support
-            </Link>
-            <Link href="/suivi" className="hover:text-bordeaux">
-              Suivi de commande
-            </Link>
-          </div>
-        </Container>
-      </div>
-
       {/* Main header */}
-      <Container className="flex h-16 items-center gap-0 md:h-[84px] md:gap-4 lg:h-[92px]">
+      <Container className="flex h-16 items-center gap-0 max-[359px]:px-3 md:h-[84px] md:gap-4 lg:h-[92px]">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/branding/mekazone-logo-transparent.png"
@@ -149,7 +87,7 @@ export function SiteHeader() {
           <SearchInput placeholder="Rechercher un produit, une pièce..." aria-label="Recherche" />
         </div>
 
-        <div className="ml-auto flex items-center gap-1">
+        <div className="ml-auto flex items-center gap-1 max-[359px]:gap-0">
           <IconButton aria-label="Mon compte">
             <Image src="/icons/ui/user.svg" alt="" width={20} height={20} />
           </IconButton>
@@ -168,7 +106,7 @@ export function SiteHeader() {
             className="md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
-            aria-controls="mobile-drawer"
+            aria-controls={open ? drawerId : undefined}
           >
             <Image src="/icons/ui/menu.svg" alt="" width={22} height={22} />
           </IconButton>
@@ -187,7 +125,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="transition-colors hover:text-bordeaux"
+              className="inline-flex h-full items-center transition-[color] hover:text-bordeaux"
               onClick={() => handleNavClick(item.href)}
             >
               {item.label}
@@ -196,54 +134,14 @@ export function SiteHeader() {
         </Container>
       </nav>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — rendu hors du header via portail (voir MobileDrawer) */}
       {open && (
-        <div className="fixed inset-0 z-50 md:hidden">
-          <button
-            type="button"
-            className="absolute inset-0 bg-noir/40"
-            aria-label="Fermer le menu"
-            onClick={() => setOpen(false)}
-          />
-          <div ref={drawerRef} id="mobile-drawer" className="absolute left-0 top-0 h-full w-72 bg-white shadow-elevated" role="dialog" aria-modal="true" aria-label="Menu mobile">
-            <div className="flex h-16 items-center justify-between border-b border-gris-fonce/10 px-4">
-              <span className="font-heading text-lg font-extrabold text-bordeaux">
-                MEKAZONE
-              </span>
-              <IconButton ref={closeButtonRef} aria-label="Fermer" onClick={() => setOpen(false)}>
-                <Image src="/icons/ui/close.svg" alt="" width={20} height={20} />
-              </IconButton>
-            </div>
-            <nav className="flex flex-col p-4" aria-label="Navigation mobile">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="rounded-md px-3 py-2 text-sm font-medium text-noir hover:bg-gris-clair"
-                  onClick={() => handleNavClick(item.href)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <div className="mt-4 border-t border-gris-fonce/10 pt-4">
-                <Link
-                  href="/compte"
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-noir hover:bg-gris-clair"
-                  onClick={() => setOpen(false)}
-                >
-                  Mon compte
-                </Link>
-                <Link
-                  href="/panier"
-                  className="block rounded-md px-3 py-2 text-sm font-medium text-noir hover:bg-gris-clair"
-                  onClick={() => setOpen(false)}
-                >
-                  Panier
-                </Link>
-              </div>
-            </nav>
-          </div>
-        </div>
+        <MobileDrawer
+          id={drawerId}
+          items={navItems}
+          onClose={() => setOpen(false)}
+          triggerRef={menuButtonRef}
+        />
       )}
     </header>
   );
